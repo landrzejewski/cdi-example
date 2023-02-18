@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @ApplicationScoped
 public class CarsConfiguration {
 
-    @Diesel
+    /*@Diesel
     @Produces
     public Car dieselCar(@Motor("diesel") DieselEngine engine, Logger logger) {
         var car = new Car(engine, logger);
@@ -30,11 +30,11 @@ public class CarsConfiguration {
         var car = new Car(engine, logger);
         car.init();
         return car;
-    }
+    }*/
 
-    public void destroyCar(@Any @Disposes Car car) {
+    /*public void destroyCar(@Any @Disposes Car car) {
         car.destroy();
-    }
+    }*/
 
     @Id
     @Produces

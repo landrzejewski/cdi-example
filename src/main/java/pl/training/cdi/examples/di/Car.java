@@ -6,12 +6,13 @@ import jakarta.inject.Inject;
 import lombok.ToString;
 import lombok.extern.java.Log;
 import pl.training.cdi.examples.di.qualifiers.Motor;
+import pl.training.cdi.examples.interceptors.MeasureTime;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @ToString
-public class Car {
+public class Car implements Vehicle {
 
     //@Setter(onMethod = @__({@Inject}))
     private Engine engine;
@@ -22,12 +23,14 @@ public class Car {
         this.engine = engine;
     }*/
 
-    //@Inject
-    public Car(/*@Motor("petrol")*/ Engine engine, Logger logger) {
+    @Inject
+    public Car(@Motor("petrol") Engine engine, Logger logger) {
         this.engine = engine;
         this.logger = logger;
     }
 
+    @MeasureTime
+    @Override
     public void go() {
         engine.start();
         logger.log(Level.INFO, "Driving...");

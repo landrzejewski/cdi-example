@@ -4,4 +4,16 @@
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
        bean-discovery-mode="all">
 
+    <!--<alternatives>
+        <class>pl.training.cdi.examples.di.TestPetrolEngine</class>
+    </alternatives>-->
+
+    <interceptors>
+        <class>pl.training.cdi.examples.interceptors.Stopper</class>
+    </interceptors>
+
+    <decorators>
+        <class>pl.training.cdi.examples.decorators.SmartCar</class>
+    </decorators>
+
 </beans>
