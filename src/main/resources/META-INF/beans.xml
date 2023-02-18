@@ -9,6 +9,7 @@
     </alternatives>-->
 
     <interceptors>
+        <class>pl.training.cdi.calculator.commons.ControllerInterceptor</class>
         <class>pl.training.cdi.examples.interceptors.Stopper</class>
     </interceptors>
 
